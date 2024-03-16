@@ -6,7 +6,7 @@ using namespace std;  // soruda verilen 'pg45631.txt' yok. o yuzden 'soru1.txt' 
 
 int main()
 {
-    ifstream infile("soru1.txt");
+    ifstream infile("soru01.txt");
 
     if (!infile.is_open()) cerr << "cannot open the file!\n";
 
@@ -50,9 +50,9 @@ int main()
         }
     }
 
-    cout << maxlower << " tane " << maxlowerletter << " harfi\n";
-    cout << maxupper << " tane " << maxupperletter << " harfi\n";
-    cout << maxother << " tane " << maxotherchar << " harfi\n";
+    cout << maxupper << " tane " << maxupperletter << " harfi: En fazla gecen buyuk harf\n";
+    cout << maxlower << " tane " << maxlowerletter << " harfi: En fazla gecen kucuk harf\n";
+    cout << maxother << " tane " << maxotherchar << " diger karakter: En fazla gecen diger karakter\n";
 
     return 0;
 }

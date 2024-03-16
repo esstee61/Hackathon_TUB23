@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <ctime>
-#include <chrono>
+#include <chrono>  // ekstra: hesaplama suresi icin
 
 using namespace std;
 
@@ -12,36 +11,33 @@ int randnum(int i, int j);
 
 int main()
 {   
-    auto start = std::chrono::high_resolution_clock::now();
-    srand(time(nullptr));
+    auto start = std::chrono::high_resolution_clock::now();  // ekstra
 
     vector<vector<int>> matrix; 
+    const int SIZE = 6;
 
-    const int SIZE = 11;
-
+    srand(time(nullptr));  // rastgele matriks olusturma
     for (int j=0; j<SIZE; ++j) {
         vector<int> row;
         for (int i=0; i<SIZE; ++i) {
-            row.push_back(randnum(-4, 6));
+            row.push_back(randnum(0, 10));
         }
         matrix.push_back(row);
     }
 
-    for (auto &r : matrix) {
+    for (auto &r : matrix) {  // print matriks
         for (int i=0; i<SIZE; ++i) {
             if (r[i]>=0) cout << " ";
             cout << r[i] << " ";
         }
         cout << "\n";
     }
-    
-    cout << "\n" << maxzero(matrix).first << " - " << maxzero(matrix).second << "\n\n";
 
-    cout << cofdeterminant(matrix) << "\n";
+    cout << "Determinant: " << cofdeterminant(matrix) << "\n";
 
-    auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
-    cout << duration.count() << " seconds.";
+    auto stop = std::chrono::high_resolution_clock::now();  // ekstra
+    auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);  // ekstra
+    cout << duration.count() << " seconds.";  // ekstra
 
     return 0;
 }

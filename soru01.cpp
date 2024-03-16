@@ -7,7 +7,7 @@ int main()
 {
     string str = "Cumhuriyetin100.YiliKutluOlsun";
 
-    wofstream outfile("soru1.txt");
+    wofstream outfile("soru01.txt");
 
     for (auto it=str.begin(); it!=str.end(); ++it) 
     {
