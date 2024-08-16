@@ -30,7 +30,8 @@ int main()
         else if (i==0) cout << "\n";
         else cout << "x^" << i << " + ";
     }
-
+    
+    cout << "turevi: ";
     for (int i=size; i>=1; --i) {
         cout << katsayilar[i] * i;
         if (i==2) cout << "x + ";
