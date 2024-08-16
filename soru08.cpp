@@ -7,7 +7,7 @@ bool ulonachi(int x);
 
 int main() 
 {
-    for (int i=1; i<100000; ++i) {
+    for (int i=1; i<100; ++i) {
         if (ulonachi(i)) cout << i << '\n';
     }
     return 0;
